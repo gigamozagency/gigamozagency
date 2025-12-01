@@ -1,232 +1,212 @@
-# 📋 GigaMoz Agency - Site Oficial
+# GigaMoz Agency - Website Completo
 
-Este é o site oficial da **GigaMoz Agency**, uma agência digital especializada em transformar visões em resultados digitais extraordinários. O site foi desenvolvido com foco em design moderno, responsividade e uma experiência de usuário premium.
+Sistema completo de website com painel administrativo e analytics integrado.
 
-## 🚀 Características Principais
+## 📁 Estrutura de Arquivos
 
-### 🎨 Design & Interface
-- **Paleta de Cores**: Azul escuro (#0a192f) e Preto com gradientes elegantes
-- **Tipografia**: Combinação de Poppins (corpo) e Montserrat (títulos)
-- **Layout**: Totalmente responsivo para todos os dispositivos
-- **Animações**: Efeitos especiais suaves e profissionais
-
-### ✨ Efeitos Especiais
-- **Partículas Interativas**: Fundo dinâmico com particles.js
-- **Animações CSS**: Fade-in, float, pulse, shine effects
-- **Elementos Flutuantes**: Ícones animados na hero section
-- **Contadores Animados**: Estatísticas que contam automaticamente
-- **Hover Effects**: Interações sofisticadas em todos os elementos
-
-### 📱 Seções do Site
-1. **Hero Section** - Apresentação impactante com call-to-action
-2. **Serviços** - 9 serviços especializados com descrições detalhadas
-3. **Sobre** - Equipe especializada e estatísticas da agência
-4. **Portfólio** - Projetos em desenvolvimento (com badges visuais)
-5. **Depoimentos** - Feedback de clientes reais com avaliações
-6. **Contato** - Múltiplas formas de entrar em contato
-
-## 🛠️ Tecnologias Utilizadas
-
-### Frontend
-- **HTML5** - Estrutura semântica
-- **CSS3** - Estilos avançados com variáveis CSS
-- **JavaScript** - Interatividade e animações
-- **Particles.js** - Efeitos de partículas no background
-
-### Bibliotecas & Fontes
-- **Font Awesome** - Ícones modernos
-- **Google Fonts** - Tipografia personalizada
-- **Unsplash** - Imagens de alta qualidade (placeholder)
-
-## 📦 Instalação e Uso
-
-### 1. Clone o Repositório
-```bash
-git clone https://github.com/seu-usuario/gigamoz-agency.git
-cd gigamoz-agency
-```
-
-### 2. Estrutura de Arquivos
 ```
 gigamoz-agency/
-│
-├── index.html          # Arquivo principal HTML
-├── style.css           # Arquivo de estilos CSS
-├── logo.png            # Logo da agência (a ser adicionado)
-│
+├── index.html          # Página principal
+├── admin.html          # Painel administrativo
+├── style.css           # Estilos CSS
+├── analytics.js        # Sistema de rastreamento
+├── track.php           # Tracking servidor (opcional)
+├── logo.png            # Logo da empresa (adicionar)
 └── README.md           # Este arquivo
 ```
 
-### 3. Personalização
-Para personalizar o site, edite os seguintes elementos:
+## 🚀 Instalação
 
-#### A. Logo
-- Substitua `logo.png` na raiz do projeto
-- Dimensões recomendadas: 50x50px (PNG transparente)
+### 1. Upload dos Arquivos
 
-#### B. Informações de Contato
-No arquivo `index.html`, atualize:
-```html
-<!-- WhatsApp -->
-<a href="https://wa.me/258847206883">...</a>
+Faça upload de todos os arquivos para seu servidor web:
+- `index.html`
+- `admin.html`
+- `style.css`
+- `analytics.js`
+- `track.php` (opcional)
+- `logo.png` (seu logo)
 
-<!-- Email -->
-<a href="mailto:gigamozagency@gmail.com">...</a>
+### 2. Configuração do Logo
 
-<!-- Facebook -->
-<a href="https://www.facebook.com/profile.php?id=61584146266908">...</a>
-```
+Adicione sua logo como `logo.png` na raiz do projeto. Se não tiver logo, o sistema mostrará automaticamente as iniciais "GM".
 
-#### C. Links do Portfólio
-Quando os projetos estiverem prontos, atualize:
+### 3. Acesso ao Painel Admin
+
+**URL:** `https://seusite.com/admin.html`
+
+**Credenciais:**
+- Email: `edsontondondo8@gmail.com`
+- Senha: `gigamoz2004`
+
+⚠️ **IMPORTANTE:** Altere estas credenciais no arquivo `admin.html` após a primeira instalação para maior segurança.
+
+## 🎯 Funcionalidades
+
+### Site Principal (index.html)
+- ✅ Hero section com animações suaves
+- ✅ 9 serviços detalhados
+- ✅ Seção sobre a empresa
+- ✅ Portfólio de projetos
+- ✅ Depoimentos de clientes
+- ✅ Formulário de contato integrado com WhatsApp
+- ✅ Design responsivo (mobile, tablet, desktop)
+- ✅ Background preto fixo sem animações pesadas
+- ✅ Tracking automático de visitantes
+
+### Painel Administrativo (admin.html)
+- ✅ Login seguro
+- ✅ Dashboard com estatísticas em tempo real
+- ✅ Total de visitantes
+- ✅ Tempo médio no site
+- ✅ Total de pedidos de serviços
+- ✅ Visitantes do dia
+- ✅ Listagem de visitantes recentes com detalhes
+- ✅ Histórico de pedidos de serviços
+- ✅ Rastreamento de tempo de permanência
+- ✅ Informações de dispositivo e navegador
+- ✅ Opções para limpar dados
+
+### Sistema de Analytics (analytics.js)
+- ✅ Rastreamento automático de visitantes
+- ✅ Cálculo de tempo de permanência
+- ✅ Detecção de dispositivo (Desktop/Mobile/Tablet)
+- ✅ Detecção de navegador
+- ✅ Tracking de pedidos de serviços
+- ✅ Armazenamento em localStorage
+- ✅ Atualização em tempo real
+
+## 📊 Como Funciona o Tracking
+
+### Dados Coletados Automaticamente:
+1. **Visitantes:**
+   - ID único do visitante
+   - Data e hora da visita
+   - Tempo de permanência no site
+   - Número de páginas visitadas
+   - Tipo de dispositivo
+   - Navegador utilizado
+
+2. **Pedidos de Serviços:**
+   - Serviço solicitado
+   - Data e hora do pedido
+   - Página de origem
+
+### Visualização no Admin:
+- Acesse `admin.html`
+- Faça login
+- Visualize todas as estatísticas em tempo real
+- Veja visitantes recentes com todos os detalhes
+- Confira pedidos de serviços realizados
+
+## 🔒 Segurança
+
+### Alterando as Credenciais de Admin:
+
+1. Abra o arquivo `admin.html`
+2. Localize as linhas:
 ```javascript
-// No final do arquivo index.html
-document.getElementById('portfolio-link-1').href = "URL_DO_PROJETO_1";
-document.getElementById('portfolio-link-2').href = "URL_DO_PROJETO_2";
-document.getElementById('portfolio-link-3').href = "URL_DO_PROJETO_3";
+const ADMIN_EMAIL = 'edsontondondo8@gmail.com';
+const ADMIN_PASSWORD = 'gigamoz2004';
 ```
+3. Altere para suas credenciais
+4. Salve o arquivo
 
-## 🎯 Serviços Oferecidos
+### Proteção Adicional (Recomendado):
+- Use HTTPS no seu site
+- Configure .htaccess para proteger admin.html
+- Implemente autenticação de 2 fatores se possível
 
-A GigaMoz Agency oferece 9 serviços especializados:
+## 🎨 Personalização
 
-1. **🎨 Criar Imagens para Clientes** (IA/Design Manual)
-2. **📄 Criação de Currículos Profissionais**
-3. **🌐 Criação de Sites Modernos**
-4. **📚 Fazer Resumos Académicos**
-5. **🖥️ Criação de Logos Profissionais**
-6. **🤖 Assistente Virtual** (Tarefas Digitais)
-7. **🛠️ Suporte Técnico Remoto**
-8. **🛒 Revenda de Produtos** (Marketplace)
-9. **🤖🌐 Criação de Sites com Inteligência Artificial**
-
-## 📞 Informações de Contato
-
-### 📱 Contato Direto
-- **WhatsApp**: [+258 84 720 6883](https://wa.me/258847206883)
-- **Email**: [gigamozagency@gmail.com](mailto:gigamozagency@gmail.com)
-- **Facebook**: [GigaMoz Agency](https://www.facebook.com/profile.php?id=61584146266908)
-
-### 👤 Responsável
-- **Nome**: Edson Bernardo Tondondo
-- **Localização**: Moçambique
-
-## 🚀 Funcionalidades Técnicas
-
-### Performance
-- ✅ Otimizado para carregamento rápido
-- ✅ Imagens comprimidas e otimizadas
-- ✅ Animações CSS puro (sem jQuery)
-- ✅ Código minificado e eficiente
-
-### SEO & Acessibilidade
-- ✅ Meta tags otimizadas
-- ✅ HTML semântico
-- ✅ Alt text em todas as imagens
-- ✅ Navegação por teclado
-
-### Compatibilidade
-- ✅ Todos os navegadores modernos
-- ✅ Dispositivos móveis (responsive)
-- ✅ Tablets e desktops
-- ✅ Diferentes resoluções de tela
-
-## 🔧 Configurações Avançadas
-
-### Personalização de Cores
-As cores podem ser alteradas editando as variáveis CSS no início do `style.css`:
+### Cores e Estilos:
+Edite as variáveis CSS no topo do `style.css`:
 ```css
 :root {
-    --primary-dark: #0a192f;
-    --primary-blue: #1e3a8a;
+    --primary-dark: #0a0a0a;
     --accent-blue: #3b82f6;
     --light-blue: #60a5fa;
-    /* ... outras cores */
+    /* ... */
 }
 ```
 
-### Configuração das Partículas
-Para modificar o efeito de partículas, edite a configuração no `index.html`:
+### Conteúdo:
+- Edite textos diretamente no `index.html`
+- Atualize links de WhatsApp e email
+- Modifique estatísticas na seção "Sobre"
+
+### Serviços:
+- Adicione ou remova serviços no `index.html`
+- Cada serviço tem estrutura padronizada
+- Mantenha o tracking `onclick="trackRequest('Nome do Serviço')"`
+
+## 📱 Contatos Configurados
+
+- **WhatsApp:** +258 84 720 6883
+- **Email:** gigamozagency@gmail.com
+- **Facebook:** [Perfil Configurado]
+- **Admin:** edsontondondo8@gmail.com
+
+## 🌐 Compatibilidade
+
+- ✅ Chrome/Edge (Recomendado)
+- ✅ Firefox
+- ✅ Safari
+- ✅ Opera
+- ✅ Mobile browsers
+
+## 💾 Backup de Dados
+
+Os dados de analytics são armazenados no **localStorage** do navegador.
+
+### Para fazer backup:
+1. Acesse o painel admin
+2. Abra o console do navegador (F12)
+3. Execute:
 ```javascript
-particlesJS("particles-js", {
-    particles: {
-        number: { value: 80 }, // Quantidade de partículas
-        color: { value: "#3b82f6" }, // Cor das partículas
-        // ... outras configurações
-    }
-});
+console.log(localStorage.getItem('visitors'));
+console.log(localStorage.getItem('serviceRequests'));
+```
+4. Copie e salve os dados
+
+### Para restaurar:
+```javascript
+localStorage.setItem('visitors', 'SEU_BACKUP_AQUI');
+localStorage.setItem('serviceRequests', 'SEU_BACKUP_AQUI');
 ```
 
-## 📱 Responsividade
+## 🔧 Solução de Problemas
 
-O site é totalmente responsivo com breakpoints específicos:
+### O tracking não está funcionando:
+- Verifique se `analytics.js` está carregado
+- Confira o console do navegador por erros
+- Certifique-se que JavaScript está habilitado
 
-| Dispositivo | Largura | Características |
-|------------|---------|-----------------|
-| Mobile | ≤ 576px | 1 coluna, menu hambúrguer |
-| Tablet | 577px - 768px | 2 colunas, layout adaptado |
-| Desktop | ≥ 769px | Layout completo, 3 colunas |
+### Não consigo fazer login no admin:
+- Verifique se digitou as credenciais corretamente
+- Limpe o cache do navegador
+- Tente em modo anônimo
 
-## 🐛 Solução de Problemas
+### As estatísticas não aparecem:
+- Visite a página principal primeiro
+- Aguarde alguns segundos
+- Recarregue o painel admin
 
-### Problemas Comuns
+## 📈 Melhorias Futuras Sugeridas
 
-1. **Logo não aparece**
-   - Verifique se o arquivo `logo.png` está na raiz
-   - Confirme o caminho no atributo `src`
+1. Integração com banco de dados MySQL
+2. Sistema de notificações por email
+3. Exportação de relatórios em PDF
+4. Gráficos de análise avançados
+5. Sistema de backup automático
 
-2. **Partículas não carregam**
-   - Verifique conexão com internet
-   - Confirme se o particles.js está carregando
+## 📞 Suporte
 
-3. **Links do WhatsApp não funcionam**
-   - Verifique o número no formato internacional
-   - Teste em dispositivo com WhatsApp instalado
-
-### Debugging
-Para depuração, abra o console do navegador (F12) e verifique:
-- Erros no console
-- Recursos não carregados
-- Problemas de CORS
-
-## 📄 Licença
-
-© 2023 GigaMoz Agency. Todos os direitos reservados.
-
-Este projeto é para uso da GigaMoz Agency. A redistribuição ou uso comercial sem autorização não é permitida.
-
-## 🤝 Contribuições
-
-Este é um projeto proprietário. Para sugestões ou relatórios de bugs, entre em contato através dos canais oficiais.
-
-## 📈 Status do Projeto
-
-✅ **Completo** - Site finalizado e pronto para produção  
-✅ **Responsivo** - Testado em múltiplos dispositivos  
-✅ **Otimizado** - Performance e SEO otimizados  
-✅ **Documentado** - Código limpo e bem comentado  
-
-## 🌟 Recursos Adicionais
-
-### Para Desenvolvedores
-- Código bem estruturado e comentado
-- Classes CSS organizadas por seção
-- JavaScript modular e eficiente
-- Facilmente extensível
-
-### Para Clientes
-- Interface intuitiva e amigável
-- Navegação simplificada
-- Informações claras e acessíveis
-- Múltiplos pontos de contato
-
----
-
-**📞 Precisa de ajuda?** Entre em contato:
-- WhatsApp: +258 84 720 6883
+Para dúvidas ou suporte, entre em contato:
 - Email: gigamozagency@gmail.com
-- Facebook: GigaMoz Agency
+- WhatsApp: +258 84 720 6883
 
 ---
 
-Desenvolvido com ❤️ pela **GigaMoz Agency** - Transformando visões em resultados digitais extraordinários!
+**GigaMoz Agency** - Transformando Visões em Resultados Digitais
+© 2023 Todos os direitos reservados.
