@@ -106,8 +106,6 @@ Adicione sua logo como `logo.png` na raiz do projeto. Se não tiver logo, o sist
 1. Abra o arquivo `admin.html`
 2. Localize as linhas:
 ```javascript
-const ADMIN_EMAIL = 'edsontondondo8@gmail.com';
-const ADMIN_PASSWORD = 'gigamoz2004';
 ```
 3. Altere para suas credenciais
 4. Salve o arquivo
