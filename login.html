@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - GigaMoz Agency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/style.css">
+  <style>
+    .login-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+    }
+    .login-box {
+      background: var(--card);
+      padding: 40px;
+      border-radius: 15px;
+      border: 1px solid var(--border);
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .login-logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .logo-large {
+      width: 80px;
+      height: 80px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #7c3aed, #06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.8rem;
+      margin: 0 auto 15px;
+      color: white;
+    }
+    .admin-only {
+      background: #f3e8ff;
+      border: 1px solid #7c3aed;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s ease-in-out infinite;
+      margin-left: 8px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-logo">
+        <div class="logo-large">GA</div>
+        <h2>GigaMoz Agency</h2>
+        <p class="muted">Área Administrativa</p>
+      </div>
+
+      <div class="admin-only">
+        <strong>👑 Acesso Restrito</strong><br>
+        Apenas o administrador principal
+      </div>
+
+      <form id="adminLoginForm">
+        <div class="form-group">
+          <input type="email" id="adminEmail" placeholder="Email do administrador" required>
+        </div>
+        <div class="form-group">
+          <input type="password" id="adminPassword" placeholder="Senha" required>
+        </div>
+        <button type="submit" class="btn" style="width: 100%;">
+          <span class="btn-text">👑 Acessar Painel Admin</span>
+          <div class="spinner" style="display: none;"></div>
+        </button>
+        
+        <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border);">
+          <a href="index.html" class="muted">← Voltar para o site</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toastContainer"></div>
+
+<!-- 1. Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+<!-- 2. Firebase Config (COM waitForFirebase) -->
+<script src="../shared/js/firebase-config.js"></script>
+
+<!-- 3. Notificações -->
+<script src="../shared/js/utils/notifications.js"></script>
+
+<!-- 4. Auth Agency -->
+<script src="../shared/js/auth-agency.js"></script>
+  <script>
+    document.getElementById('adminLoginForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('adminEmail').value;
+      const password = document.getElementById('adminPassword').value;
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const spinner = submitBtn.querySelector('.spinner');
+
+      if (!email || !password) {
+        showError('Por favor, preencha todos os campos');
+        return;
+      }
+
+      btnText.textContent = 'Verificando...';
+      spinner.style.display = 'inline-block';
+      submitBtn.disabled = true;
+
+      try {
+        const result = await window.agencyAuth.adminLogin(email, password);
+        
+        if (!result.success) {
+          showError(result.error);
+          btnText.textContent = '👑 Acessar Painel Admin';
+          spinner.style.display = 'none';
+          submitBtn.disabled = false;
+        }
+      } catch (error) {
+        console.error('Erro:', error);
+        showError('Erro inesperado');
+        btnText.textContent = '👑 Acessar Painel Admin';
+        spinner.style.display = 'none';
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Preencher credenciais do admin principal (apenas para desenvolvimento)
+    function fillAdminCredentials() {
+      document.getElementById('adminEmail').value = 'edsontondondo8@gmail.com';
+      document.getElementById('adminPassword').value = 'admin123';
+    }
+
+    // Botão para preencher automaticamente (apenas em desenvolvimento)
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      const fillBtn = document.createElement('button');
+      fillBtn.type = 'button';
+      fillBtn.className = 'ghost';
+      fillBtn.style.marginTop = '10px';
+      fillBtn.textContent = '🧪 Preencher Credenciais (Dev)';
+      fillBtn.onclick = fillAdminCredentials;
+      document.querySelector('form').appendChild(fillBtn);
+    }
+  </script>
+</body>
+</html>
